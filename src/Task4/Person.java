@@ -1,54 +1,40 @@
 package Task4;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.time.LocalDate;
+
 public class Person {
+
     private String name;
     private int birthYear;
-
-    public String getName() {
-        return this.name;
-    }
-    public int getBirthYear() {
-        return this.birthYear;
-    }
-
-
-    public Person() {
-
-    }
 
     public Person(String name, int birthYear) {
         this.name = name;
         this.birthYear = birthYear;
     }
 
-
-    public int age() {
-
-        return age();
+    public String getName() {
+        return name;
     }
 
-    public void input(String name, int birthYear) {
+    public int getBirthYear() {
+        return birthYear;
     }
 
-    public void output(String name, int birthYear) {
-
+    public int calculateAge(int birthYear) {
+        LocalDate currentDate = LocalDate.now();
+        int currentYear = currentDate.getYear();
+        return currentYear - birthYear;
     }
 
-    public String changeName() {
-        return changeName();
-
-    }
-    public static void main(String[] args) {
-        Person person1 = new Person("Iryna", 2000);
-        System.out.println(person1.getName() + ' ' + person1.getBirthYear());
-        Person person2 = new Person("Oleksij", 1996);
-        System.out.println(person2.getName() + ' ' + person2.getBirthYear());
-        Person person3 = new Person("Anastasiia", 2002);
-        System.out.println(person3.getName() + ' ' + person3.getBirthYear());
-        Person person4 = new Person("Andrij", 1983);
-        System.out.println(person4.getName() + ' ' + person4.getBirthYear());
-        Person person5 = new Person("Oleksandr", 1991);
-        System.out.println(person5.getName() + ' ' + person5.getBirthYear());
-
+    public void inputInformation() throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("What is your name?");
+        String name = br.readLine();
+        System.out.println("Your name is  " + name);
+        String birthYear = br.readLine();
+        System.out.println("Your birth year is " + birthYear);
     }
 }

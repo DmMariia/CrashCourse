@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class PhoneCalls {
     public static void main(String[] args) {
+
         Scanner s = new Scanner(System.in);
         System.out.println("Enter the numbers:");
 
@@ -19,6 +20,5 @@ public class PhoneCalls {
         int c = c3*t3;
 
         System.out.println(a + b + c);
-
     }
 }
