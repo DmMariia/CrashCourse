@@ -1,24 +1,21 @@
 package Task8;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
 public class Main {
     public static void main(String[] args) {
-        int[] arr = {600, 750, 450, 370};
-        descending(arr);
 
-        for (int i = 0; i < arr.length; i++)
-            System.out.println(arr[i] + " ");
-    }
-    public static void descending(int[] arr){
-        int n = arr.length;
-        for(int i = n - 1; i > 0; i--) {
-            for(int j = 0; j < i; j++) {
-                if(arr[j] > arr[j + 1]) {
-                    int tmp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = tmp;
-                }
-            }
+        ArrayList<Employee> employees = new ArrayList<>();
+        employees.add(new SalariedEmployee("127", "Orest", 600));
+        employees.add(new SalariedEmployee("701", "Ann", 750));
+        employees.add(new ContractEmployee("389", "Anton", 10, 40));
+        employees.add(new ContractEmployee("012", "Kate", 7, 25));
+        employees.sort(Comparator.comparing(Employee::calculatePay));
+
+        for (Employee iterator : employees) {
+            System.out.println(iterator.toString());
         }
-
     }
 }

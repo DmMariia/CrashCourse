@@ -2,17 +2,30 @@ package Task8;
 
 public class ContractEmployee extends Employee implements Pay {
 
-    public String hourlyPaidWorkers;
-    public String federalTaxidmember;
-    public int avarageMonthlySalary;
-    public int hourlyRate;
-    public int numberOfHoursWorked;
+    private int hourlyRate;
+    private int numberOfHoursWorked;
 
-    public ContractEmployee(String employeeId, String name, int avarageMonthlySalary) {
+    public ContractEmployee(String employeeId, String name, int hourlyRate, int numberOfHoursWorked) {
         this.employeeId = employeeId;
         this.name = name;
-        this.avarageMonthlySalary = avarageMonthlySalary;
+        this.hourlyRate = hourlyRate;
+        this.numberOfHoursWorked = numberOfHoursWorked;
+    }
 
+    public int getHourlyRate() {
+        return hourlyRate;
+    }
+
+    public int getNumberOfHoursWorked() {
+        return numberOfHoursWorked;
+    }
+
+    @Override
+    public String toString() {
+        return "ContractEmployee{" +
+                "hourlyRate=" + hourlyRate +
+                ", numberOfHoursWorked=" + numberOfHoursWorked +
+                '}';
     }
 
     @Override

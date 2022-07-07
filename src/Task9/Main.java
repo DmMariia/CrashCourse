@@ -7,10 +7,10 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        double a = 15.4;
-        double b = 3.7;
-
-
-
+        try {
+            System.out.println(div(15.3, 0));
+        } catch(ArithmeticException e) {
+            e.printStackTrace();
+        }
     }
 }

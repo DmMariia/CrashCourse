@@ -1,21 +1,18 @@
 package Task5;
 
 public class Min {
+
     public static void main(String[] args) {
-
-        int a = 23;
-        int b = 115;
-        int c = 48;
-
-        if ((a < b) && (a < c)) {
-            System.out.println("Number a is the minimum.");
-        } if ((b < a) && (b < c)) {
-            System.out.println("Number b is the minimum.");
-        } if ((c < a) && (c < b)) {
-            System.out.println("Number c is the minimum.");
-        } else {
-
+        int[] arr = {2, -5, 7, -4, 8, 2};
+        int min = arr[0];
+        int i = 0;
+        while (i < arr.length) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+            i++;
         }
+        System.out.println(min);
     }
 }
 

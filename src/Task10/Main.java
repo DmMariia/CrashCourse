@@ -40,7 +40,6 @@ public class Main {
         personMap.remove("Serhij");
 
         System.out.println(personMap);
-        }
-
-        }
+    }
+}
 
